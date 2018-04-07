@@ -15,5 +15,6 @@ class Pessoa extends TRecord
         parent::addAttribute('rg');
         parent::addAttribute('cpf');
         parent::addAttribute('id_pessoa');
+        parent::addAttribute('datanasc');
       }
     }
