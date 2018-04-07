@@ -24,9 +24,9 @@ class CadastroPessoa extends TPage
         $this->notebook->appendPage('Dados Pessoais', $page1);
         $this->notebook->appendPage('Endereço', $page2);
         $nome = new TEntry('nome');
-        $nome->getPostData();
+        
         $nome->setTip('informe seu nome completo');
-        $nome->setSize(300);
+        $nome->setSize(400);
         $rg = new TEntry('rg');
         $rg->setTip('informe seu RG civil');
         $cpf = new TEntry('cpf');
