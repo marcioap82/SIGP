@@ -17,7 +17,7 @@
   z-index: 12;
   width: 100%; }
   .navbar .navbar-brand {
-    white-space: nowrap;
+      white-space: nowrap;
     -ms-text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
@@ -453,6 +453,8 @@
   margin-right: 10px;
   margin-left: -10px;
   margin-top: 4px; }
+  
+ 
 
 .col-lime .navbar .bars:hover {
   background-color: rgba(0, 0, 0, 0.08); }
@@ -2522,7 +2524,7 @@ section.content {
 .panel .btn-primary:hover,
 .panel .btn-primary:active,
 .panel .btn-primary:focus {
-  background-color: #1f91f3 !important; }
+  background-color: #333 !important; }
 
 /* Bootstrap Tags Input ======================== */
 .bootstrap-tagsinput {
@@ -2555,6 +2557,7 @@ section.content {
     user-select: none;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
+  
 
 .noUi-base {
   width: 100%;
@@ -7497,7 +7500,7 @@ fieldset[disabled] .form-control {
         overflow: hidden;
         font-size: 14px;
         max-width: 200px;
-        color: #fff; }
+        color: black; }
       .sidebar .user-info .info-container .email {
         white-space: nowrap;
         -ms-text-overflow: ellipsis;

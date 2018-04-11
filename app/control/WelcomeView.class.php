@@ -17,21 +17,39 @@ class WelcomeView extends TPage
     function __construct()
     {
         parent::__construct();
-        
-        $html1 = new THtmlRenderer('app/resources/system_welcome_en.html');
-        $html2 = new THtmlRenderer('app/resources/system_welcome_pt.html');
-
+        try{
+         TTransaction::open('permission');
+        TSession::regenerate();
+       $valor= TSession::getValue('userunitid');
+       if($valor==1)
+       {
+        //$html1 = new THtmlRenderer('app/resources/system_welcome_en.html');
+       $html2 = new THtmlRenderer('app/resources/inicioforcatatica.html');
+       }else
+       {
+           $html2 = new THtmlRenderer('app/resources/system_welcome_pt.html');
+       }
+       TTransaction::close();
+         }catch(Exception $e)
+         {
+             new TMessage('error', $e->getMessage);
+         }
         // replace the main section variables
-        $html1->enableSection('main', array());
+       // $html1->enableSection('main', array());
         $html2->enableSection('main', array());
         
-        $panel1 = new TPanelGroup('Welcome!');
-        $panel1->add($html1);
-        
-        $panel2 = new TPanelGroup('Bem-vindo!');
+        //$panel1 = new TPanelGroup('Welcome!');
+        //$panel1->add($html1);
+        $texto = new TLabel('Bem-vindo!');
+        $texto->style='text-sty';
+        $texto->setFontColor('red');
+        $texto->setFontSize(14);
+        $panel2 = new TPanelGroup($texto);
+        $panel2->style='background-color: #e9ebee';
+       
         $panel2->add($html2);
         
         // add the template to the page
-        parent::add( TVBox::pack($panel1, $panel2) );
+        parent::add( TVBox::pack($panel2) );
     }
 }

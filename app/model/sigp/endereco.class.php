@@ -1,5 +1,5 @@
 <?php
-class Pessoa extends TRecord
+class endereco extends TRecord
 {
     const TABLENAME = 'endereco';
     const PRIMARYKEY= 'id';
@@ -11,9 +11,13 @@ class Pessoa extends TRecord
         public function __construct($id = NULL)
         {
             parent::__construct($id);
-            parent::addAttribute('rua');
+            parent::addAttribute('logradouro');
             parent::addAttribute('cep');
             parent::addAttribute('bairro');
-            parent::addAttribute('id_pessoa');
+            parent::addAttribute('numero');
+           
+            
         }
+        
+        
     }
